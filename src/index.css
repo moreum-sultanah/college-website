@@ -1,0 +1,18 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a8a;    /* Deep Royal Blue — derived from logo */
+  --color-accent: #d4a017;     /* Warm Gold */
+  --color-background: #faf8f3; /* Warm Off-White */
+  --color-ink: #1e293b;        /* Dark charcoal/navy */
+
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background font-body text-ink antialiased;
+  }
+}
