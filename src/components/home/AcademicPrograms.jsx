@@ -1,9 +1,11 @@
 
+
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Briefcase,
+  BookMarked,
   BookOpen,
+  Briefcase,
   GraduationCap,
 } from "lucide-react";
 import { programs } from "../../data/programs";
@@ -12,6 +14,7 @@ const iconMap = {
   GraduationCap: GraduationCap,
   BookOpen: BookOpen,
   Briefcase: Briefcase,
+  BookMarked: BookMarked,
 };
 
 export default function AcademicPrograms() {
@@ -31,15 +34,16 @@ export default function AcademicPrograms() {
           </Link>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {programs.map((program) => {
             const Icon = iconMap[program.icon];
+            const to = program.link || `/academics/${program.id}`;
 
             return (
               <Link
                 key={program.id}
-                to={`/academics/${program.id}`}
-                className="group rounded-lg border border-ink/10 bg-white p-6 transition-colors hover:border-primary/30"
+                to={to}
+                className="group flex flex-col rounded-lg border border-ink/10 bg-white p-6 transition-colors hover:border-primary/30"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon className="h-6 w-6" />
@@ -47,7 +51,7 @@ export default function AcademicPrograms() {
                 <h3 className="mt-4 font-heading text-lg font-semibold text-ink group-hover:text-primary">
                   {program.name}
                 </h3>
-                <p className="mt-2 text-sm text-ink/70">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70">
                   {program.description}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">

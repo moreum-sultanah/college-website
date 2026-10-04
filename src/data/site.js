@@ -1,5 +1,7 @@
 
-// ⚠️ PLACEHOLDER INFO — phone/email/facebook এখনো নকল!
+
+// Site-wide info — Footer, Contact, ভবিষ্যতে অন্যত্রও ব্যবহার হবে।
+// ⚠️ PLACEHOLDER — phone/email/facebook এখনো নকল!
 // College থেকে আসল তথ্য পেলে শুধু এখানে বদলাও।
 // Launch-এর আগে বদলানো বাধ্যতামূলক!
 
@@ -9,5 +11,5 @@ export const siteInfo = {
   location: "Cox's Bazar, Bangladesh",
   phone: "+880 1XXX-XXXXXX",
   email: "info@example.com",
-  facebook: "https://www.facebook.com/your-college-page",
+  
 };

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import PageHeader from "../components/common/PageHeader";
 import {
+  BookMarked,
   BookOpen,
   Briefcase,
   GraduationCap,
@@ -14,6 +15,7 @@ const iconMap = {
   GraduationCap: GraduationCap,
   BookOpen: BookOpen,
   Briefcase: Briefcase,
+  BookMarked: BookMarked,
 };
 
 function ProgramTags({ tags }) {
@@ -48,18 +50,16 @@ export default function Academics() {
         description="From higher secondary to honours and professional programs — explore the academic paths at Cox's Bazar City College."
       />
 
-      {/* Program cards */}
+      {/* Program cards (৪টা — সবাই সমান) */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {programs.map((program) => {
             const Icon = iconMap[program.icon];
             const tags =
+              program.tags ||
               program.groups ||
               program.subjects ||
-              [
-                ...(program.degreeSubjects || []),
-                ...(program.professionalSubjects || []),
-              ];
+              program.degreeSubjects;
 
             return (
               <Link
