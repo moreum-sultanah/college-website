@@ -17,7 +17,7 @@ export default function NoticeCard({ notice }) {
 
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <h3 className="font-heading text-base font-semibold text-ink sm:text-lg">
+          <h3 className="font-heading text-base font-semibold text-ink transition-colors group-hover:text-primary sm:text-lg">
             {notice.title}
           </h3>
           {notice.is_new && (
