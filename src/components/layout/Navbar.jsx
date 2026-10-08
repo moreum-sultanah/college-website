@@ -18,7 +18,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="border-b border-ink/10 bg-white">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-white">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo & College Name */}
         <Link to="/" className="flex items-center gap-3">
