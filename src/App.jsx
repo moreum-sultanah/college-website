@@ -1,5 +1,3 @@
-
-
 import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/common/ScrollToTop";
 import Layout from "./components/layout/Layout";
@@ -9,6 +7,7 @@ import Academics from "./pages/Academics";
 import ProgramPage from "./pages/ProgramPage";
 import Notices from "./pages/Notices";
 import NoticeDetails from "./pages/NoticeDetails";
+import Admissions from "./pages/Admissions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +23,7 @@ export default function App() {
           <Route path="academics/:programId" element={<ProgramPage />} />
           <Route path="notices" element={<Notices />} />
           <Route path="notices/:slug" element={<NoticeDetails />} />
+          <Route path="admissions" element={<Admissions />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
