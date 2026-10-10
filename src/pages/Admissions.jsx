@@ -1,6 +1,7 @@
 
+
 import { Link } from "react-router-dom";
-import { ArrowRight, Info } from "lucide-react";
+import { ArrowRight, Info, MessageCircle } from "lucide-react";
 import PageHeader from "../components/common/PageHeader";
 import FaqSection from "../components/common/FaqSection";
 import { siteInfo } from "../data/site";
@@ -120,6 +121,35 @@ export default function Admissions() {
 
       {/* FAQ */}
       <FaqSection />
+
+      {/* CTA */}
+      <section className="bg-primary">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                <MessageCircle className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h2 className="font-heading text-2xl font-semibold text-white sm:text-3xl">
+                  Still have questions?
+                </h2>
+                <p className="mt-1 text-white/80">
+                  Contact the college office — we're happy to help.
+                </p>
+              </div>
+            </div>
+
+            <Link
+              to="/contact"
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-white/90"
+            >
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
