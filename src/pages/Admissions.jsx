@@ -2,7 +2,9 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Info } from "lucide-react";
 import PageHeader from "../components/common/PageHeader";
+import FaqSection from "../components/common/FaqSection";
 import { siteInfo } from "../data/site";
+import { admissionSteps } from "../data/admissionSteps";
 
 export default function Admissions() {
   const breadcrumbItems = [
@@ -72,6 +74,52 @@ export default function Admissions() {
           </div>
         </div>
       </section>
+
+      {/* How to Apply */}
+      <section className="bg-primary/5">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+              How to Apply
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-primary sm:text-4xl">
+              Four simple steps
+            </h2>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {admissionSteps.map((step, index) => (
+              <div key={step.id} className="relative text-center sm:text-left">
+                {/* Connecting line — প্রথমটা বাদে, শুধু lg */}
+                {index > 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute right-full top-6 hidden h-px w-6 bg-ink/15 lg:block"
+                  />
+                )}
+
+                <div className="flex items-center gap-4 sm:flex-col sm:items-start">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-semibold text-white">
+                    {index + 1}
+                  </div>
+
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold text-ink">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FaqSection />
     </>
   );
 }
